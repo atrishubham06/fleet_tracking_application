@@ -3,8 +3,9 @@ using FleetTrackerAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure the app to run on port 5123 explicitly
-builder.WebHost.UseUrls("http://localhost:5123");
+// Configure the app to run on the port specified by the environment (useful for cloud deployment) or default to 5123
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5123";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 // Add services to the container.
 builder.Services.AddControllers();

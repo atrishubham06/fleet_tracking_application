@@ -15,6 +15,8 @@ function MapRecenter({ center }) {
   return null;
 }
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5123';
+
 export default function App() {
   const [vessels, setVessels] = useState({});
   const [selectedVesselId, setSelectedVesselId] = useState(null);
@@ -38,7 +40,7 @@ export default function App() {
 
   // Fetch initial active vessels on load
   useEffect(() => {
-    fetch('http://localhost:5123/api/vessels')
+    fetch(`${BACKEND_URL}/api/vessels`)
       .then((res) => res.json())
       .then((data) => {
         const initialVessels = {};
@@ -53,7 +55,7 @@ export default function App() {
   // Connect to C# SignalR Hub
   useEffect(() => {
     const connection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5123/trackerHub')
+      .withUrl(`${BACKEND_URL}/trackerHub`)
       .withAutomaticReconnect()
       .configureLogging(signalR.LogLevel.Information)
       .build();
