@@ -1,0 +1,31 @@
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.user
+*.log
+
+# Local .NET SDK installation
+.dotnet/
+dotnet-install.sh
+
+# .NET Build outputs
+**/bin/
+**/obj/
+
+# Node.js
+**/node_modules/
+**/dist/
+frontend/package-lock.json
+tech-blog-cms/
+
+# Python virtual environment
+**/venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+
+# Local databases
+*.db
+*.db-journal
