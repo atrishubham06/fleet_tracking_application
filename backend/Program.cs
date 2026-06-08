@@ -41,4 +41,7 @@ app.UseCors("CorsPolicy");
 app.MapControllers();
 app.MapHub<TrackerHub>("/trackerHub");
 
+// Add a friendly landing page at the root URL to avoid 404 errors
+app.MapGet("/", () => "Nautilus Fleet Control Room API is running...");
+
 app.Run();
