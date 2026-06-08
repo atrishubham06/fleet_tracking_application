@@ -90,3 +90,4 @@ python simulator.py
 ## 🧠 ML Model Pipeline
 - **ETA Model:** Trained on simulated waypoint paths. Takes `[route_id, lat, lon, speed, distance_remaining]` and performs regression forecasting.
 - **Anomaly Detection Model:** Trained on normal coordinate profiles. Evaluates `[route_id, lat, lon]` using an Isolation Forest to flag route deviations in real-time.
+# fleet_tracking_application
